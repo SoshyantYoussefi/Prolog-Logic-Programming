@@ -2,6 +2,7 @@
 dog(rex).
 dog(fido).
 dog(rover).
+person(anna).
 
 %%Anna is gentle
 gentle(anna).
@@ -22,9 +23,9 @@ gentle(fido).
 playful(rover).
 energetic(rover).
 
-%Every dog trusts gentle people
+%Every dog trusts gentle people Tog bort dog kravet härifrån ty content funktionen
 trusts(D,P) :-
-    dog(D),
+    %dog(D),
     gentle(P). 
 
 %All well-fed beings are content
@@ -33,11 +34,15 @@ content(B) :-
 
 %Every dog that trusts a person who trusts it back is content
 content(D) :-
+    dog(D),
+    person(P),
     trusts(D,P),
     trusts(P,D).
 
 %Every person who trusts a dog that trusts them back is content
 content(P) :-
+    person(P),
+    dog(D),
     trusts(P,D),
     trusts(D,P).
 
@@ -50,4 +55,5 @@ trusts(fido, P) :-
     playful(P).
 
 % Anna trusts all dogs that trust her, provided they are either (1) well-fed
-% and playful, or (2) gentle and energetic */
+% and playful, or (2) gentle and energetic 
+
