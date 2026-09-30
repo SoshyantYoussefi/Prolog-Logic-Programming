@@ -1,4 +1,7 @@
 %Lärdomar: Uppercase = variable, Lowercase = constant
+% and=, or=;
+
+
 dog(rex).
 dog(fido).
 dog(rover).
@@ -56,4 +59,11 @@ trusts(fido, P) :-
 
 % Anna trusts all dogs that trust her, provided they are either (1) well-fed
 % and playful, or (2) gentle and energetic 
+trusts(anna, D) :-
+    trusts(D, anna),
+    (wellfed(D), 
+    playful(D); 
+    gentle(D), 
+    energetic(D)).
+
 
