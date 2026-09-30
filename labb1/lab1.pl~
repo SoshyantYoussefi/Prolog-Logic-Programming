@@ -1,8 +1,6 @@
 %Lärdomar: Uppercase = variable, Lowercase = constant
 % and=, or=;
 
-%För att undvika oändlig loop i trusts(Anna,Rex)
-:- table trusts/2.
 
 dog(rex).
 dog(fido).
@@ -30,8 +28,7 @@ energetic(rover).
 
 %Every dog trusts gentle people Tog bort dog kravet härifrån ty content funktionen
 trusts(D,P) :-
-    dog(D),
-    person(P),
+    %dog(D),
     gentle(P). 
 
 %All well-fed beings are content
@@ -69,10 +66,5 @@ trusts(anna, D) :-
     gentle(D), 
     energetic(D)).
 
-/*
-findall(D, (dog(D), trusts(D, anna)), Tobul),
-length(Tobul, N).
-
-findall(Vad, Villkor, Lista)
 
 
