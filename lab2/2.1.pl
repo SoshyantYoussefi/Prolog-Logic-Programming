@@ -1,22 +1,13 @@
 % Uppercase = variable, lowercase = constant
 %[] tom lista, [X|Xs] = [Head, Sec|Tail]
 
-
-%Träd: base: l(X), t(L,R)
-
-% peano-tal: zero, s(N)
-
 %member(X, List) betyder: Är X ett element i List?
-
 %append/3 - append([1,2], [3,4], X) - X = [1,2,3,4].
-
-
 issorted([]).
 issorted([X]).
 issorted([X, Y | Tail]):-
     X =< Y,
     issorted([Y|Tail]).
-
 
 %Hjälpfunktiion - Hittar minsta elementet i lista
 
