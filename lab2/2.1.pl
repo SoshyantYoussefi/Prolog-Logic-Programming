@@ -44,5 +44,36 @@ ssort(L, [Minsta| SlutTail]):-
     list_transform(L, [Minsta| Tail]),
     ssort(Tail, SlutTail).
 
-
 %Quick sort
+larger(N, [], []).
+larger(N, [X| Tail], [X| Tail2]):-
+    N =< X,
+    larger(N, Tail, Tail2).
+%Ifall X inte är larger blir resultatet samma lista exklusive X
+larger(N, [X| Tail], Tail2):-
+    N > X,
+    larger(N, Tail, Tail2).
+
+smaller(N, [], []).
+smaller(N, [X| Tail], [X| Tail2]):-
+    N > X,
+    smaller(N, Tail, Tail2).
+
+%Ifall X inte är smaller blir resultatet samma lista exklusive X
+smaller(N, [X| Tail], Tail2):-
+    N =< X,
+    smaller(N, Tail, Tail2).
+
+qsort([], []).
+qsort([N| Tail], Sorted):-
+    larger(N, Tail, Larger),
+    smaller(N, Tail, Smaller),
+    qsort(Larger, Larger2),
+    qsort(Smaller, Smaller2),
+    append(Smaller2, [N| Larger2], Sorted).
+
+
+
+    
+
+
