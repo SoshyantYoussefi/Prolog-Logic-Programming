@@ -11,8 +11,10 @@ get([Y = _ | Tail], X, Value):-
 
 
 
-set([X=Value | Tail], X, Value, B2). % Första fallet är att värdet vi vill ändra är först i listan.
-set(B1, X, Value, B2):-
+set([X=Value | Tail], X, Value, [X = Value| Tail]). % Första fallet är att värdet vi vill ändra är först i listan.
+set([Y = Old | Tail], X, Value, [X = Old| NewTail]):-
+    dif(X,Y), %x har olika värden
+    set(Tail, X, Value, NewTail).
     
 
 
