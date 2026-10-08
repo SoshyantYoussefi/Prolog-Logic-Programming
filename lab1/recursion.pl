@@ -18,6 +18,9 @@ path(X,Y):-
 path(X,Y):-
     edge(X,Z),
     edge(Z,Y).
+%path(X, Y):-
+    edge(X,Z),
+    path(Z,Y).
 
 %path(start, finish, vägen head|tail)
 
