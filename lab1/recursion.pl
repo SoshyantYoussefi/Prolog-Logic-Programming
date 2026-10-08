@@ -35,5 +35,8 @@ npath(X,Y, L):-
     path(X,Y, Path),
     length(Path, L).
 
+%npath(X, Y, L):-
+    path(X, Y, [_|Tail]),
+    length(Tail, L).
 
 
