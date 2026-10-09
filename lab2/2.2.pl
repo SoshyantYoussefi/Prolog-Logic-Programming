@@ -18,8 +18,8 @@ middle(X, [First|Xs]) :-
     middle(X, Middle),
     append(Middle, [Last], Xs).
 
-%?- middle(X, [a,b,c]) => X = b 
-% ?- middle(a, X). => X = [a], X = [_, a, _], X = [_, a, _]  
+%?- middle(X, [a,b,c]) => X = b => o'ndligt
+% ?- middle(a, X). => X = [a], X = [_, a, _], X = [_, _, a, _, _]  
 
 
 %Basfall efter
