@@ -13,7 +13,7 @@ union([X | Xs], [Y| Ys], [X|R]):-
     X@<Y, %prologs egna ordning
     union(Xs, [Y|Ys], R).
 
-union([X | Xs], [Y| Ys], [X|R]):-
+union([X | Xs], [Y| Ys], [Y|R]):-
     X@>Y,
     union([X|Xs], Ys, R).
 
