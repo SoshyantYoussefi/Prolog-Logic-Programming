@@ -63,11 +63,10 @@ trusts(fido, P) :-
 % Anna trusts all dogs that trust her, provided they are either (1) well-fed
 % and playful, or (2) gentle and energetic 
 trusts(anna, D) :-
-    trusts(D, anna),
-    (wellfed(D), 
-    playful(D); 
-    gentle(D), 
-    energetic(D)).
+    dog(D),
+    (wellfed(D), playful(D);
+     gentle(D), energetic(D)),
+    trusts(D, anna).
 
 /*
 findall(D, (dog(D), trusts(D, anna)), Tobul),
