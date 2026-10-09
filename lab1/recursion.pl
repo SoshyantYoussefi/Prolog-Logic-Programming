@@ -35,4 +35,15 @@ npath(X, Y, L):-
     path(X, Y, [_|Tail]),
     length(Tail, L).
 
+% Visa en väg från a till g
+%?- path(a,g,P).
+% Första svaret: P = [a,b,c,d,f,g].
+
+% Finns det en väg från a till c med 2 kanter?
+%?- npath(a,c,2).
+% true.
+
+% Finns det en väg från a till g med 3 kanter?
+%?- npath(a,g,3).
+
 
