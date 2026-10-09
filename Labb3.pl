@@ -5,7 +5,6 @@
 parse(Tokens, AST) :-
     phrase(pgm(AST), Tokens).
 
-
 % PROGRAM
 % A program consists of one or more commands.
 
@@ -16,7 +15,6 @@ pgm(seq(C1, C2)) -->
 
 pgm(C) -->
     cmd(C).
-
 
 % COMMANDS
 
@@ -48,7 +46,6 @@ cmd(while(B, C)) -->
     pgm(C),
     [od].
 
-
 % BOOLEAN EXPRESSIONS
 
 bool(tt) -->
@@ -66,7 +63,6 @@ bool(E1 < E2) -->
     expr(E1),
     ['<'],
     expr(E2).
-
 
 % ARITHMETIC EXPRESSIONS
 
@@ -86,7 +82,6 @@ expr(E1 - E2) -->
 expr(E) -->
     factor(E).
 
-
 % FACTORS
 
 % Multiplication
@@ -98,7 +93,6 @@ factor(E1 * E2) -->
 % A single term
 factor(E) -->
     term(E).
-
 
 % TERMS
 
