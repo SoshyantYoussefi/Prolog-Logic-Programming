@@ -27,11 +27,11 @@ path(X,Y,[X|Tail]):-
     edge(X,Z),
     path(Z,Y, Tail).
 
-npath(X,Y, L):-
-    path(X,Y, Path),
-    length(Path, L).
+%npath(X,Y, L):-
+%    path(X,Y, Path),
+%    length(Path, L).
 
-%npath(X, Y, L):-
+npath(X, Y, L):-
     path(X, Y, [_|Tail]),
     length(Tail, L).
 
