@@ -103,3 +103,12 @@ execute(S0, while(B,C), Sn2):-
 
 execute(S0, while(B,C), S0):-
     false(S0, B).
+
+%Testfall
+
+% ?- get([x=3,y=7], x, V).                                       V = 3
+% ?- set([x=3,y=7], x, 10, M).                                   M = [x=10,y=7]
+% ?- eval([x=3], id(x)+num(2), V).                               V = 5
+% ?- true_([x=3], id(x)<num(5)).                                 true
+% ?- execute([x=3], set(x,num(5)), M).                           M = [x=5]
+% ?- execute([x=0], while(id(x)<num(3),set(x,id(x)+num(1))), M).  M = [x=3]

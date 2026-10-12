@@ -64,7 +64,12 @@ qsort([N| Tail], Sorted):-
     append(Smaller2, [N| Larger2], Sorted).
 
 
-
-    
-
-
+%Testfall:
+% ?- issorted([1,2,3]).               true
+% ?- issorted([3,1,2]).               false
+% ?- hitta_minsta([3,1,2], X).        X = 1
+% ?- list_transform([3,1,2], X).      X = [1,3,2]
+% ?- ssort([3,1,2], X).               X = [1,2,3]
+% ?- larger(3, [1,4,2,5], X).         X = [4,5]
+% ?- smaller(3, [1,4,2,5], X).        X = [1,2]
+% ?- qsort([4,2,1,3], X).             X = [1,2,3,4]
