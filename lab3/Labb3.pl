@@ -7,7 +7,6 @@ parse(Tokens, AST) :-
 
 % PROGRAM
 % A program consists of one or more commands.
-
 pgm(seq(C1, C2)) -->
     cmd(C1),
     [';'],
