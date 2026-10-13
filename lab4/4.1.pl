@@ -2,13 +2,13 @@
 
 
 %Om vi har nått målet är sökningen klar.
-dfs(State) :- 
+dfs(State, [State]) :-
     goal_state(State).
 
 %behövs loop detection ty rekursionen kan hoppa fram o tillbaka mellan samma tillstånd.
-dfs(State) :- 
+dfs(State, [State | Path] ) :- 
     next(State, NewState),
-    dfs(NewState).
+    dfs(NewState, Path).
 
 
 goal_state(c).
