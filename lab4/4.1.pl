@@ -1,7 +1,7 @@
 
+:- table dfs(_, first).
 
-
-%Om vi har nått målet är sökningen klar.
+%Om vi har nått målet är sökningen klar. Path tillagt som i uppg1.2
 dfs(State, [State]) :-
     goal_state(State).
 
@@ -14,9 +14,9 @@ dfs(State, [State | Path] ) :-
 goal_state(c).
 start_state(a).
 next(a,b).
-%next(b,a).
+next(b,a).
 next(b,c).
 
 
 
-%:- table dfs(_, first).
+
