@@ -1,0 +1,22 @@
+
+
+
+%Om vi har nått målet är sökningen klar.
+dfs(State) :- 
+    goal_state(State).
+
+%behövs loop detection ty rekursionen kan hoppa fram o tillbaka mellan samma tillstånd.
+dfs(State) :- 
+    next(State, NewState),
+    dfs(NewState).
+
+
+goal_state(c).
+start_state(a).
+next(a,b).
+%next(b,a).
+next(b,c).
+
+
+
+%:- table dfs(_, first).
