@@ -1,7 +1,7 @@
 %Tabulation enligt labbinstruktioner
 :- table dfs(_, first).
 
-%Om vi har nått målet är sökningen klar. Path tillagt som i uppg1.2
+%Om vi har nått målet är sökningen kla
 dfs(State, [State]) :-
     goal_state(State).
 
@@ -9,8 +9,6 @@ dfs(State, [State]) :-
 dfs(State, [State | Path] ) :- 
     next(State, NewState),
     dfs(NewState, Path).
-
-
 
 %Kontrollerar ifall en sida är safe 
 safe(0,_).
@@ -27,15 +25,6 @@ safe(state(K, B, _)):-
     BR is 3 - B,
    safe(KR, BR).
 
-/*
-safe(state(K, B, _)) :-
-    K >= 0, K =< 3,
-    B >= 0, B =< 3,
-    safe_side(K, B),
-    KR is 3 - K,
-    BR is 3 - B,
-    safe_side(KR, BR).
-*/
 %beskriver hur båten kan fröflryttas: transport(knight, brigand) alla möjliga kombinationer
 transport(1,0).
 transport(0,1).
@@ -63,8 +52,6 @@ next(a,b).
 next(b,a).
 next(b,c).
 */
-
-
 
 % Alla börjar på vänster sida
 start_state(state(3, 3, left)).
