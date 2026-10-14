@@ -60,3 +60,6 @@ start_state(state(3, 3, left)).
 goal_state(state(0, 0, right)).
 %Testa:
 % start_state(S), dfs(S, Path).
+
+%Performance:
+%time((start_state(S), dfs(S, Path))).
