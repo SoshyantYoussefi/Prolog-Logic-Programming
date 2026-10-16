@@ -1,7 +1,8 @@
 % LAB 3.1 - PARSER
 
-% parse(Tokens, AST)
-% Converts tokens into abstract syntax.
+% Tokens = listan med ord och symboler som ska läsas.
+% AST = resultatet, alltså programmets struktur.
+% phrase/2 kör grammatiken pgm på hela tokenlistan.
 parse(Tokens, AST) :-
     phrase(pgm(AST), Tokens).
 
