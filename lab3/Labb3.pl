@@ -1,3 +1,11 @@
+- ensure_loaded('scanner.pl').
+:- ensure_loaded('lab2_3.pl').
+
+run(In, String, Out) :-
+    scan(String, Tokens),
+    parse(Tokens, AST),
+    execute(In, AST, Out).
+
 % LAB 3.1 - PARSER
 
 % Tokens = listan med ord och symboler som ska läsas.
@@ -14,8 +22,7 @@ pgm(seq(C1, C2)) -->
     [';'],
     pgm(C2).
 
-pgm(C) -->
-    cmd(C).
+pgm(C) --> cmd(C).
 
 % Test: parse([skip,';',skip], X).
 % X = seq(skip,skip).
@@ -59,6 +66,12 @@ bool(tt) -->
 
 bool(ff) -->
     [ff].
+
+bool(tt) -->
+    [true].
+
+bool(ff) -->
+    [false].
 
 bool(E1 > E2) -->
     expr(E1),
