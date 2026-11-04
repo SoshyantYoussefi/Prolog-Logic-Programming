@@ -13,15 +13,14 @@ issorted([X, Y | Tail]):-
 
 hitta_minsta([X], X).
 %Ifall första elementet i listan X är mindre eller lika stort som svansens misnta
-hitta_minsta([X| Tail], Minsta):-
+hitta_minsta([X| Tail], X):-
     hitta_minsta(Tail, Tail_Minsta),
-    X =< Tail_Minsta,
-    Minsta = X.
+    X =< Tail_Minsta.
+
 %Ifall första elementet i listan X är större än  svansens misnta element
-hitta_minsta([X| Tail], Minsta):-
+hitta_minsta([X| Tail], Tail_Minsta):-
     hitta_minsta(Tail, Tail_Minsta),
-    X > Tail_Minsta,
-    Minsta = Tail_Minsta.
+    X > Tail_Minsta.
 
 %Selection sort
 list_transform(L, [X | Rest]):-
@@ -73,3 +72,4 @@ qsort([N| Tail], Sorted):-
 % ?- larger(3, [1,4,2,5], X).         X = [4,5]
 % ?- smaller(3, [1,4,2,5], X).        X = [1,2]
 % ?- qsort([4,2,1,3], X).             X = [1,2,3,4]
+

@@ -42,3 +42,15 @@ middle(X, [X]).
 % ?- middle(a, X). => X = oändlig loop
 
 
+
+/*
+
+Version 1 (Base first, append first): Terminates for a given list because append reduces the list before recursion. Can also generate lists with a given middle element.
+
+Version 3 (Base first, middle first): Finds the middle element but enters infinite recursion when searching for more solutions. Can generate lists with a given middle element.
+
+Version 2 (Recursive first, append first): Terminates for a given list. For list generation, it produces longer lists but never reaches the base case as a standalone solution.
+
+Version 4 (Recursive first, middle first): Enters infinite recursion for both queries because recursion happens before reaching the base case.
+
+Preferred versions: Version 1 for middle(X,[a,b,c]) and Version 3 for middle(a,X).
